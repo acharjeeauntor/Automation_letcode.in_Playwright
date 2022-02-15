@@ -1,0 +1,27 @@
+{
+  "name": "letcodetest",
+  "version": "1.0.0",
+  "description": "This is demo application for playwright automation",
+  "main": "index.js",
+  "scripts": {
+    "headed": "npx playwright test --headed --reporter=list",
+    "list:test": "npx playwright test --reporter=list",
+    "codegen":"npx playwright codegen",
+    "debug":"npx playwright test --debug",
+    "pw:run": "npx playwright test",
+    "allure:report": "allure generate allure-results --clean && allure open ./allure-report",
+    "allure:clear": "if [ -d allure-results ]; then rm -Rf allure-results; fi && if [ -d allure-report ]; then rm -Rf allure-report; fi",
+    "pretest": "npm run allure:clear",
+    "test": "npm run pw:run || npm run posttest",
+    "posttest": "npm run allure:report"
+  },
+  "keywords": [],
+  "author": "Auntor Acharja",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.18.1"
+  },
+  "dependencies": {
+    "allure-playwright": "^2.0.0-beta.15"
+  }
+}
