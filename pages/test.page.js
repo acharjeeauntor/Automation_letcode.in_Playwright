@@ -1,8 +1,8 @@
 const testPageSelectors = {
     inputEditLinkSelector: "[href='/edit']",
     clickBtnSelector: "[href='/buttons']",
-    fileLinkSelector:"[href='/file']"
-
+    fileLinkSelector:"[href='/file']",
+    alertLinkSelector:"[href='/alert']"
 }
 
 
@@ -19,6 +19,9 @@ class TestPage {
       }
       async accessFilePage(){
         await this.page.click(testPageSelectors.fileLinkSelector)
+      }
+      async accessAlertPage(){
+        await this.page.click(testPageSelectors.alertLinkSelector)
       }
 
 }
