@@ -5,7 +5,11 @@ const { AlertPage, alertPageSelectors } = require("../pages/alert.page")
 const AlertData = require('../projectVariables/alertData.json')
 
 let alertPage, testPage, page, common
+
+
 test.describe("Test Different types of Alert ", () => {
+
+
     test.beforeAll(async ({ browser }) => {
         page = await browser.newPage()
         await page.goto("./")
@@ -19,8 +23,17 @@ test.describe("Test Different types of Alert ", () => {
 
     //Test Case Execution From Here....................................
 
-    test("Test Simple Alert Message", async () => {
+    test("Accept the Alert", async () => {
         expect(await alertPage.getSimpleAlertMsg()).toBe(AlertData.simpleAlertMsg)
+    })
+
+    test("Dismiss the Alert & print the alert text", async () => {
+        expect(await alertPage.getConfirmAlertMsg()).toBe(AlertData.confirmAlertMsg)
+    })
+
+    test("Type your name & accept", async () => {
+      await alertPage.enterNameInPrompt(AlertData.name)
+      expect(await alertPage.getName()).toContain(AlertData.name)
     })
 })
 

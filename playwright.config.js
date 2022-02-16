@@ -15,7 +15,7 @@ const config = {
    
   },
   testDir: './tests',
-  testMatch:"alert.test.js",
+  testMatch:"dropdown.test.js",
 
   /* Maximum time one test can run for. */
   //timeout: 30 * 1000,

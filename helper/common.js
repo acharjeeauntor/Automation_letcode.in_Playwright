@@ -6,18 +6,16 @@ constructor(page){
 }
 
     getDialogMessage(){
-        let x='zx';
+        let msg;
         this.page.on('dialog', (dialog) => {
-            console.log(dialog.message())
-        
-            console.log(dialog.defaultValue())
-            console.log(dialog.type())
+            //console.log(dialog.message())
+            msg = dialog.message()
+            //console.log(dialog.defaultValue())
+            //console.log(dialog.type())
             dialog.accept()
-            return dialog.message()
-            //alertPage.getSimpleAlertMsg()
         })
 
-        //return x
+        return msg
      
     }
 }
