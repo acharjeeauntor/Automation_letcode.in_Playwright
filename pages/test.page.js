@@ -3,7 +3,10 @@ const testPageSelectors = {
     clickBtnSelector: "[href='/buttons']",
     fileLinkSelector:"[href='/file']",
     alertLinkSelector:"[href='/alert']",
-    dropDownLinkSelector:"[href='/dropdowns']"
+    dropDownLinkSelector:"[href='/dropdowns']",
+    windowsLinkSelector:"[href='/windows']",
+    workSpaceTabSelector:"#testing",
+    signInBtnSelector:"[href='/signin']"
 }
 
 
@@ -26,6 +29,15 @@ class TestPage {
       }
       async accessDropdownPage(){
         await this.page.click(testPageSelectors.dropDownLinkSelector)
+      }
+      async accessWindowsPage(){
+        await this.page.click(testPageSelectors.windowsLinkSelector)
+      }
+      async clickWorkSpace(){
+        await this.page.click(testPageSelectors.workSpaceTabSelector)
+      }
+      async clickSignInBtn(page){
+        await page.click(testPageSelectors.signInBtnSelector)
       }
 
 }

@@ -15,10 +15,10 @@ const config = {
    
   },
   testDir: './tests',
-  testMatch:"dropdown.test.js",
+  testMatch:"windows.test.js",
 
   /* Maximum time one test can run for. */
-  //timeout: 30 * 1000,
+  timeout: 90 * 1000,
 
   expect: {
 
