@@ -59,7 +59,7 @@ test.describe("Single and Multiple Window Handle", async () => {
         ])
         await multiWindow.waitForLoadState()
         const allWindows = multiWindow.context().pages()
-        console.log("Total Window: " + allWindows)
+        console.log("Total Window: " + allWindows.length)
         allWindows.forEach(page => {
             console.log(page.url())
         })

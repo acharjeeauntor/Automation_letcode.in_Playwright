@@ -6,7 +6,8 @@ const testPageSelectors = {
     dropDownLinkSelector:"[href='/dropdowns']",
     windowsLinkSelector:"[href='/windows']",
     workSpaceTabSelector:"#testing",
-    signInBtnSelector:"[href='/signin']"
+    signInBtnSelector:"[href='/signin']",
+    frameLinkSelector:"[href='/frame']"
 }
 
 
@@ -38,6 +39,9 @@ class TestPage {
       }
       async clickSignInBtn(page){
         await page.click(testPageSelectors.signInBtnSelector)
+      }
+      async accessFramePage(){
+        await this.page.click(testPageSelectors.frameLinkSelector)
       }
 
 }

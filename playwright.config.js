@@ -15,7 +15,7 @@ const config = {
    
   },
   testDir: './tests',
-  testMatch:"windows.test.js",
+  testMatch:"frame.test.js",
 
   /* Maximum time one test can run for. */
   timeout: 90 * 1000,
