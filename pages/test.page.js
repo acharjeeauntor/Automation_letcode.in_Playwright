@@ -7,7 +7,8 @@ const testPageSelectors = {
     windowsLinkSelector:"[href='/windows']",
     workSpaceTabSelector:"#testing",
     signInBtnSelector:"[href='/signin']",
-    frameLinkSelector:"[href='/frame']"
+    frameLinkSelector:"[href='/frame']",
+    elementsLinkSelector :"[href='/elements']"
 }
 
 
@@ -42,6 +43,9 @@ class TestPage {
       }
       async accessFramePage(){
         await this.page.click(testPageSelectors.frameLinkSelector)
+      }
+      async accessElementPage(){
+        await this.page.click(testPageSelectors.elementsLinkSelector)
       }
 
 }

@@ -19,7 +19,7 @@
   "author": "Auntor Acharja",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.18.1"
+    "@playwright/test": "^1.19.1"
   },
   "dependencies": {
     "allure-playwright": "^2.0.0-beta.15"

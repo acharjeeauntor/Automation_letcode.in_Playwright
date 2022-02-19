@@ -28,7 +28,7 @@ test.describe("Test Different types of Alert ", () => {
     })
 
     test("Dismiss the Alert & print the alert text", async () => {
-        expect(await alertPage.getConfirmAlertMsg()).toBe(AlertData.confirmAlertMsg)
+        expect.soft(await alertPage.getConfirmAlertMsg(),"This issue is known limitaion").toBe(AlertData.confirmAlertMsg)
     })
 
     test("Type your name & accept", async () => {
