@@ -8,8 +8,6 @@ let dropdownPage, testPage, page, common
 
 
 test.describe("Test Different types of Dropdown ", () => {
-
-
     test.beforeAll(async ({ browser }) => {
         page = await browser.newPage()
         await page.goto("./")

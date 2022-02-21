@@ -8,7 +8,9 @@ const testPageSelectors = {
     workSpaceTabSelector:"#testing",
     signInBtnSelector:"[href='/signin']",
     frameLinkSelector:"[href='/frame']",
-    elementsLinkSelector :"[href='/elements']"
+    elementsLinkSelector :"[href='/elements']",
+    dropLinkSelector:"[href='/dropable']",
+    shadowDomLinkSelector:"[href='/shadow']"
 }
 
 
@@ -46,6 +48,12 @@ class TestPage {
       }
       async accessElementPage(){
         await this.page.click(testPageSelectors.elementsLinkSelector)
+      }
+      async accessDragDropPage(){
+        await this.page.click(testPageSelectors.dropLinkSelector)
+      }
+      async accessShadowDomPage(){
+        await this.page.click(testPageSelectors.shadowDomLinkSelector)
       }
 
 }

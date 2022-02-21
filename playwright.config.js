@@ -11,11 +11,11 @@ const config = {
     baseURL:"https://letcode.in/test/",
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
-    trace: 'retain-on-failure',
+    trace: 'retain-on-failure', 
    
   },
   testDir: './tests',
-  testMatch:"alert.test.js",
+  testMatch:"shadowDom.test.js",
 
   /* Maximum time one test can run for. */
   timeout: 90 * 1000,
@@ -39,7 +39,8 @@ const config = {
   workers: process.env.CI ? 1 : undefined,
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'list',
+  // reporter: 'list',
+  reporter: 'allure-playwright',
 
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
 

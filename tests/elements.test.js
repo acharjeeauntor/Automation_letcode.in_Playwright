@@ -20,7 +20,8 @@ test.describe("Elements test", async () => {
         await elementsPage.enterGitUsername(ElementData.username)
         expect (await elementsPage.userImageSelector()).toBeVisible()
         await elementsPage.getUserInfo()
-        expect(await elementsPage.getTotalRepos()).toBe(ElementData.totalrepo)
+      expect(await elementsPage.getTotalRepos()).toBe(ElementData.totalrepo)
+        
     })
 
 
