@@ -19,13 +19,13 @@ test.describe("Frame", async () => {
     test("Test Frame", async () => {
         await page.waitForLoadState()
         const firstFrame = page.frame({ name: framePageSelector.firstFrameName })
-        if (firstFrame != null) {
+        if (firstFrame !== null) {
             await framePage.enterFirstName(firstFrame,FrameData.firstName)
             await framePage.enterLastName(firstFrame, FrameData.lastName)
 
             // innerframe
             const frames = firstFrame.childFrames()
-            if (frames != null) {
+            if (frames !== null) {
                 console.log(frames.length)
                 await framePage.enterEmail(frames[0],FrameData.email)
 
@@ -33,7 +33,7 @@ test.describe("Frame", async () => {
 
             // Back To Parent Frame / First Frame
             const parentFrame = frames[0].parentFrame()
-            if (parentFrame != null) {
+            if (parentFrame !== null) {
                 await framePage.enterFirstName(parentFrame,FrameData.updatedName)
                 await framePage.enterLastName(parentFrame, FrameData.lastName)
             }

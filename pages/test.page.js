@@ -10,7 +10,8 @@ const testPageSelectors = {
     frameLinkSelector:"[href='/frame']",
     elementsLinkSelector :"[href='/elements']",
     dropLinkSelector:"[href='/dropable']",
-    shadowDomLinkSelector:"[href='/shadow']"
+    shadowDomLinkSelector:"[href='/shadow']",
+    waitsLinkSelector:"[href='/waits']"
 }
 
 
@@ -54,6 +55,9 @@ class TestPage {
       }
       async accessShadowDomPage(){
         await this.page.click(testPageSelectors.shadowDomLinkSelector)
+      }
+      async accessWaitPage(){
+        await this.page.click(testPageSelectors.waitsLinkSelector)
       }
 
 }

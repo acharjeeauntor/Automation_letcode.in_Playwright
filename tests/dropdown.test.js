@@ -31,8 +31,10 @@ test.describe("Test Different types of Dropdown ", () => {
     })
 
     test("Select the last programming language and print all the options", async () => {
-      const lang = await dropdownPage.getAllLangOptions()
-      expect(await dropdownPage.getSelectedProgrammingLanguage()).toContain(lang)
+     const lang = await dropdownPage.getAllLangOptions()
+     expect(await dropdownPage.getSelectedProgrammingLanguage()).toContain(lang)
+     //await dropdownPage.getAllLangOptions()
+     
     })
 
     test("Select India using value & print the selected value", async () => {
