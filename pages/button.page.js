@@ -4,7 +4,7 @@ const buttonPageSelectors = {
 homeBtnSelector:"#home",
 colorBtnSelector:"#color",
 disableBtnSelector:"[title='Disabled button']",
-holdbtnXpathSelector:"//h2[contains(text(),'Button Hold!')]"
+holdbtnSelector:"button:has-text('Button Hold!')"
 }
 
 
@@ -36,6 +36,18 @@ class ButtonPage {
 
     async buttonDisable(){
         expect(await this.page.locator(buttonPageSelectors.disableBtnSelector)).toBeDisabled()
+    }
+
+    async clickAndHold(){
+        await this.page.waitForSelector(buttonPageSelectors.holdbtnSelector)
+        await this.page.click(buttonPageSelectors.holdbtnSelector,{
+            delay:3000
+        })
+    }
+
+    async getHoldBtnText(){
+        //this.page.waitForSelector("//h2")
+        return  this.page.locator("//h2").textContent()
     }
 }
 

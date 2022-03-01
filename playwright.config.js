@@ -17,7 +17,7 @@ const config = {
     }
   },
   testDir: './tests',
-  testMatch:"wait.test.js",
+  testMatch:"button.test.js",
 
   /* Maximum time one test can run for. */
   timeout: 90 * 1000,
