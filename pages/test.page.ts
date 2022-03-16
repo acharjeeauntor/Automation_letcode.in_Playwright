@@ -1,4 +1,6 @@
-const testPageSelectors = {
+
+import {Page} from "@playwright/test"
+export const testPageSelectors = {
     inputEditLinkSelector: "[href='/edit']",
     clickBtnSelector: "[href='/buttons']",
     fileLinkSelector:"[href='/file']",
@@ -15,8 +17,9 @@ const testPageSelectors = {
 }
 
 
-class TestPage {
-    constructor(page) {
+export class TestPage {
+  readonly page:Page
+    constructor(page:Page) {
         this.page = page
     }
 
@@ -61,5 +64,3 @@ class TestPage {
       }
 
 }
-
-module.exports={TestPage,testPageSelectors}

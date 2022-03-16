@@ -1,10 +1,15 @@
-const { test, expect } = require('@playwright/test')
-const { TestPage } = require("../pages/test.page")
-const { Common } = require("../helper/common")
-const { DropdownPage, alertPageSelectors } = require("../pages/dropdown.page")
-const DropDownData = require("../projectVariables/dropdownData.json")
+// const { test, expect } = require('@playwright/test')
+// const { TestPage } = require("../pages/test.page")
+// const { Common } = require("../helper/common")
+// const { DropdownPage, alertPageSelectors } = require("../pages/dropdown.page")
+// const DropDownData = require("../projectVariables/dropdownData.json")
 
-let dropdownPage, testPage, page, common
+import{test,expect,Page} from "@playwright/test"
+import{DropdownPage,dropdownPageSelectors} from "../pages/dropdown.page"
+import {TestPage,testPageSelectors} from "../pages/test.page"
+import DropDownData from "../projectVariables/dropdownData.json"
+
+let dropdownPage:DropdownPage, testPage:TestPage, page:Page
 
 
 test.describe("Test Different types of Dropdown ", () => {
@@ -13,7 +18,6 @@ test.describe("Test Different types of Dropdown ", () => {
         await page.goto("./")
         dropdownPage = new DropdownPage(page)
         testPage = new TestPage(page)
-        common = new Common(page)
 
         await testPage.accessDropdownPage()
     })
@@ -37,10 +41,10 @@ test.describe("Test Different types of Dropdown ", () => {
      
     })
 
-    test("Select India using value & print the selected value", async () => {
-      const country = await dropdownPage.selectCounty(DropDownData.countryName)
-      expect(country).toBe(DropDownData.countryName)
-    })
+    // test("Select India using value & print the selected value", async () => {
+    //   const country = await dropdownPage.selectCounty(DropDownData.countryName)
+    //   expect(country).toBe(DropDownData.countryName)
+    // })
 
 })
 

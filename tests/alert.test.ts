@@ -1,10 +1,10 @@
-const { test, expect } = require('@playwright/test')
-const { TestPage } = require("../pages/test.page")
-const { Common } = require("../helper/common")
-const { AlertPage, alertPageSelectors } = require("../pages/alert.page")
-const AlertData = require('../projectVariables/alertData.json')
+import{test,expect,Page} from "@playwright/test"
+import{AlertPage,alertPageSelectors} from "../pages/alert.page"
+import {TestPage,testPageSelectors} from "../pages/test.page"
+import AlertData from "../projectVariables/alertData.json"
 
-let alertPage, testPage, page, common
+
+let alertPage:AlertPage, testPage:TestPage, page:Page
 
 
 test.describe("Test Different types of Alert ", () => {
@@ -15,7 +15,6 @@ test.describe("Test Different types of Alert ", () => {
         await page.goto("./")
         alertPage = new AlertPage(page)
         testPage = new TestPage(page)
-        common = new Common(page)
 
         await testPage.accessAlertPage()
     })

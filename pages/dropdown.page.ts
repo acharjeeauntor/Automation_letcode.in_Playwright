@@ -1,4 +1,5 @@
-const dropdownPageSelectors = {
+import {Page} from "@playwright/test"
+export const dropdownPageSelectors = {
     fruitsDropdownSelector: "#fruits",
     selectedOptionTextSelector: ".content .subtitle",
     heroDropDownSelector: "#superheros",
@@ -7,18 +8,19 @@ const dropdownPageSelectors = {
     countryOptionSelector: "#country"
 }
 
-class DropdownPage {
-    constructor(page) {
+export class DropdownPage {
+    readonly page:Page
+    constructor(page:Page) {
         this.page = page
     }
 
-    async selectFruit(text) {
-        const ele = await this.page.locator(dropdownPageSelectors.fruitsDropdownSelector)
+    async selectFruit(text:string) {
+        const ele =await  this.page.locator(dropdownPageSelectors.fruitsDropdownSelector)
         await ele.selectOption({ label: text })
     }
 
     async getSelectedFruitName() {
-        const ele = await this.page.locator(dropdownPageSelectors.selectedOptionTextSelector)
+        const ele =await  this.page.locator(dropdownPageSelectors.selectedOptionTextSelector)
         return ele.textContent()
     }
 
@@ -34,7 +36,7 @@ class DropdownPage {
 
     async getAllLangOptions() {
           const lang = await this.page.$$(dropdownPageSelectors.languageOptionSelector)
-          const len =await lang.length
+          const len = await lang.length
           for(var i=0;i<len;i++){
             console.log(await this.page.locator(dropdownPageSelectors.languageOptionSelector).nth(i).textContent())
             if(i===len-1){
@@ -53,11 +55,11 @@ class DropdownPage {
         return ele.textContent()
     }
 
-    async selectCounty(countryName) {
-        await this.page.selectOption(dropdownPageSelectors.countryOptionSelector, countryName)
-        const val = await this.page.$eval(dropdownPageSelectors.countryOptionSelector, el => el.value)
-        console.log(val)
-        return val
+    async selectCounty(countryName:string) {
+        // await this.page.selectOption(dropdownPageSelectors.countryOptionSelector, countryName)
+        // const val = await this.page.$eval(dropdownPageSelectors.countryOptionSelector, el => el.value)
+        // console.log(val)
+        // return val
     }
 
     //  demogetAllOptions(page, selector) {
@@ -74,5 +76,3 @@ class DropdownPage {
 
 
 }
-
-module.exports = { DropdownPage, dropdownPageSelectors }

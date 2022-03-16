@@ -1,27 +1,35 @@
 {
   "name": "letcodetest",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "This is demo application for playwright automation",
   "main": "index.js",
   "scripts": {
+    "test": "npx playwright test",
     "headed": "npx playwright test --headed --reporter=list",
-    "list:test": "npx playwright test --reporter=list",
-    "codegen":"npx playwright codegen",
-    "debug":"npx playwright test --debug",
-    "pw:run": "npx playwright test",
-    "allure:report": "allure generate allure-results --clean && allure open ./allure-report",
-    "allure:clear": "if [ -d allure-results ]; then rm -Rf allure-results; fi && if [ -d allure-report ]; then rm -Rf allure-report; fi",
-    "pretest": "npm run allure:clear",
-    "test": "npm run pw:run || npm run posttest",
-    "posttest": "npm run allure:report"
+    "debug": "npx playwright test --debug",
+    "test:single": "npx playwright test Login.test.ts --project=Chrome",
+    "test:parallel": "npx playwright test --grep @Smoke --project=Chrome",
+    "test:serial": "npx playwright test --grep @Smoke --workers=1 --project=Chrome",
+    "test:api": "npx playwright test --grep @API --workers=1 --project=API",
+    "test:db": "npx playwright test DB.test.ts --project=DB",
+    "test:record": "npx playwright codegen",
+    "test:visual": "npx playwright test visualComparision.test.ts --project=Chrome",
+    "test:device": "npx playwright test Emulation.test.ts --project=Device",
+    "allureReport": "allure serve"
   },
   "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/acharjeeauntor/Automation_letcode.in_Playwright.git"
+  },
   "author": "Auntor Acharja",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.19.1"
+    "@playwright/test": "^1.20.0"
   },
   "dependencies": {
-    "allure-playwright": "^2.0.0-beta.15"
+    "allure-playwright": "^2.0.0-beta.15",
+    "clipboardy": "^3.0.0",
+    "typescript": "^4.6.2"
   }
 }

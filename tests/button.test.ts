@@ -1,9 +1,8 @@
-const { test, expect } = require("@playwright/test")
-const { ButtonPage } = require('../pages/button.page')
-const { TestPage } = require("../pages/test.page")
-//const InputData = require("../projectVariables/inputData.json")
+import{test,expect,Page} from "@playwright/test"
+import{ButtonPage,buttonPageSelectors} from "../pages/button.page"
+import {TestPage,testPageSelectors} from "../pages/test.page"
 
-let buttonPage, testPage
+let buttonPage:ButtonPage, testPage:TestPage
 test.describe("Button test", () => {
     test("Test button element", async ({ page }) => {
         buttonPage = new ButtonPage(page)

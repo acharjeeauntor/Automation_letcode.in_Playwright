@@ -1,6 +1,6 @@
-const {test,expect} = require("@playwright/test")
+import {Page,expect} from "@playwright/test"
 
-const buttonPageSelectors = {
+export const buttonPageSelectors = {
 homeBtnSelector:"#home",
 colorBtnSelector:"#color",
 disableBtnSelector:"[title='Disabled button']",
@@ -8,23 +8,24 @@ holdbtnSelector:"button:has-text('Button Hold!')"
 }
 
 
-class ButtonPage {
-    constructor(page) {
+export class ButtonPage {
+    readonly page:Page
+    constructor(page:Page) {
         this.page = page
     }
 
     async getButtonPageLink(){
-        return await this.page.url()
+        return this.page.url()
       }
 
       async clickGotoHomeBtnAndGetUrl(){
           await this.page.click(buttonPageSelectors.homeBtnSelector)
-          return await this.page.url()
+          return  this.page.url()
       }
 
       async navigateBackFromHomePageAndGetUrl(){
         await this.page.goBack()
-        return await this.page.url()
+        return this.page.url()
     }
                              
     async getColorCode(){
@@ -35,7 +36,7 @@ class ButtonPage {
     }
 
     async buttonDisable(){
-        expect(await this.page.locator(buttonPageSelectors.disableBtnSelector)).toBeDisabled()
+        expect( this.page.locator(buttonPageSelectors.disableBtnSelector)).toBeDisabled()
     }
 
     async clickAndHold(){
@@ -50,5 +51,3 @@ class ButtonPage {
         return  this.page.locator("//h2").textContent()
     }
 }
-
-module.exports={ButtonPage,buttonPageSelectors}
