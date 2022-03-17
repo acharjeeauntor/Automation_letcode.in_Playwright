@@ -1,6 +1,6 @@
 const {test,expect} = require("@playwright/test")
-const {TestPage} = require('../pages/test.page')
-const {WaitPage, waitsPageLocator} = require('../pages/wait.page')
+const {TestPage} = require('../pages-backup/test.page')
+const {WaitPage, waitsPageLocator} = require('../pages-backup/wait.page')
 
 test.describe("Test Explicit wait",async()=>{
     let testPage,waitPage
