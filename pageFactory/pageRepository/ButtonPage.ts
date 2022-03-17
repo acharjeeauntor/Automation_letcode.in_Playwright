@@ -1,9 +1,9 @@
-import { Page } from "@playwright/test"
-import{WebActions} from "../../lib/WebActions"
-import{ButtonPageObjects} from "../objectRepository/ButtonPageObjects"
+import { Page,expect } from "@playwright/test"
+import { WebActions } from "../../lib/WebActions"
+import { ButtonPageObjects } from "../objectRepository/ButtonPageObjects"
 
-let webActions:WebActions
-let buttonPageObjects:ButtonPageObjects
+let webActions: WebActions
+let buttonPageObjects: ButtonPageObjects
 
 export class ButtonPage {
     readonly page: Page
@@ -13,10 +13,31 @@ export class ButtonPage {
         buttonPageObjects = new ButtonPageObjects()
     }
 
-   async navigateToUrl(url:string):Promise<void>{
-       await webActions.navigateToURL(url)
-   }
+    async navigateToUrl(url: string): Promise<void> {
+        await webActions.navigateToURL(url)
+    }
 
+    async clickGoToHomeBtn(): Promise<void> {
+        await webActions.clickElement(buttonPageObjects.Home_Btn_ID)
+    }
 
+    async verifyHomePageByUrl(url: string): Promise<void> {
+        await webActions.verifyByUrl(url)
+    }
+    async navigateBackFromHomePage() {
+        this.page.goBack()
+    }
+    async btnBGColor():Promise<string> {
+        return await webActions.getBGColorCode(buttonPageObjects.Color_Btn_ID)
+    }
+    async verifyBtnDisable(){
+        expect(this.page.locator(buttonPageObjects.Disable_Btn_Selector)).toBeDisabled()
+    }
+    async clickAndHoldButton():Promise<void>{
+        await webActions.clickAndHoldElement(buttonPageObjects.Hold_Btn_Selector)
+    }
+    async verifyHoldBtnText(text:string):Promise<void>{
+        await webActions.verifyElementContainsText(buttonPageObjects.Hold_Btn_Text,text)
+    }
 
 }
