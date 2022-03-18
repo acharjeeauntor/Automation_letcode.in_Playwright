@@ -1,4 +1,4 @@
-import { Page,expect } from "@playwright/test"
+import { Page, expect } from "@playwright/test"
 import { WebActions } from "../../lib/WebActions"
 import { ButtonPageObjects } from "../objectRepository/ButtonPageObjects"
 
@@ -27,17 +27,18 @@ export class ButtonPage {
     async navigateBackFromHomePage() {
         this.page.goBack()
     }
-    async btnBGColor():Promise<string> {
+    async btnBGColor(): Promise<string> {
         return await webActions.getBGColorCode(buttonPageObjects.Color_Btn_ID)
     }
-    async verifyBtnDisable(){
-        expect(this.page.locator(buttonPageObjects.Disable_Btn_Selector)).toBeDisabled()
+    async verifyBtnDisable(): Promise<boolean> {
+        return await this.page.locator(buttonPageObjects.Disable_Btn_Selector).isDisabled()
+
     }
-    async clickAndHoldButton():Promise<void>{
+    async clickAndHoldButton(): Promise<void> {
         await webActions.clickAndHoldElement(buttonPageObjects.Hold_Btn_Selector)
     }
-    async verifyHoldBtnText(text:string):Promise<void>{
-        await webActions.verifyElementContainsText(buttonPageObjects.Hold_Btn_Text,text)
+    async verifyHoldBtnText(text: string): Promise<void> {
+        await webActions.verifyElementContainsText(buttonPageObjects.Hold_Btn_Text, text)
     }
 
 }

@@ -5,7 +5,7 @@ import { testConfig } from './testConfig';
 const config: PlaywrightTestConfig = {
 
   testDir: './tests',
-  testMatch: "Button.test.ts",
+  testMatch: "*.test.ts",
   expect: {
 
     /**

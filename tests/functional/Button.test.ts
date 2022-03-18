@@ -1,48 +1,53 @@
 import test from "../../lib/BaseTest"
 import { expect } from "@playwright/test"
+import ButtonData from "../../test-data/buttonData.json"
 
 test.describe(`Test Button`, async () => {
+    test.beforeEach(async({ buttonPage })=>{
+        await buttonPage.navigateToUrl("/buttons")
+    })
     test(`Goto Home and come back here using driver command`, async ({ buttonPage }) => {
-        await test.step(`Goto Button page`, async () => {
-            await buttonPage.navigateToUrl("/buttons")
-        })
+        // await test.step(`Goto Button page`, async () => {
+        //     await buttonPage.navigateToUrl("/buttons")
+        // })
         await test.step(`Click Go to Home Button`, async () => {
             await buttonPage.clickGoToHomeBtn()
         })
         await test.step(`Verify home page`, async () => {
-            await buttonPage.verifyHomePageByUrl("https://letcode.in/")
+            await buttonPage.verifyHomePageByUrl(ButtonData.homePageUrl)
         })
         await test.step(`Navigate Back to previous page`, async () => {
             await buttonPage.navigateBackFromHomePage()
         })
     })
     test(`Find the color of the button`, async ({ buttonPage }) => {
-        await test.step(`Goto Button page`, async () => {
-            await buttonPage.navigateToUrl("/buttons")
-        })
+        // await test.step(`Goto Button page`, async () => {
+        //     await buttonPage.navigateToUrl("/buttons")
+        // })
         await test.step(`Verify Button BG Color`, async () => {
             let colorCode = await buttonPage.btnBGColor()
-            expect(colorCode).toEqual('rgb(138, 77, 118)')
+            expect(colorCode).toEqual(ButtonData.buttonColorCode)
         })
     })
-    test(`Confirm button is disabled`, async ({ buttonPage }) => {
-        await test.step(`Goto Button page`, async () => {
-            await buttonPage.navigateToUrl("/buttons")
-        })
+    test.only(`Confirm button is disabled`, async ({ buttonPage }) => {
+        // await test.step(`Goto Button page`, async () => {
+        //     await buttonPage.navigateToUrl("/buttons")
+        // })
         await test.step(`Verify button is disabled`, async () => {
-            await buttonPage.verifyBtnDisable()
+           let result= await buttonPage.verifyBtnDisable()
+           expect(result).toBe(true)
         })
     })
 
     test(`Click and Hold Button`, async ({ buttonPage }) => {
-        await test.step(`Goto Button page`, async () => {
-            await buttonPage.navigateToUrl("/buttons")
-        })
+        // await test.step(`Goto Button page`, async () => {
+        //     await buttonPage.navigateToUrl("/buttons")
+        // })
         await test.step(`Click and Hold Button`, async () => {
             await buttonPage.clickAndHoldButton()
         })
         await test.step(`Verify Button text after click and hold`, async () => {
-            await buttonPage.verifyHoldBtnText(`Button has been long pressed`)
+            await buttonPage.verifyHoldBtnText(ButtonData.buttonLongPressText)
         })
     })
 })

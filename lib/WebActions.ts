@@ -34,9 +34,43 @@ export class WebActions {
         return color
     }
 
+    async enterElementText(locator: string, text: string): Promise<void> {
+        await this.waitForElementAttached(locator);
+        await this.page.fill(locator, text);
+    }
+
+    async clearInputField(locator: string): Promise<void> {
+        await this.waitForElementAttached(locator);
+        await this.page.fill(locator, "");
+    }
+
+    async selectDropDownByLabel(locator:string,label:string):Promise<void> {
+        await this.waitForElementAttached(locator);
+        await this.page.selectOption(locator,{ label: label })
+    }
+    async selectDropDownByIndex(locator:string,index:number):Promise<void> {
+        await this.waitForElementAttached(locator);
+        await this.page.selectOption(locator,{ index: index })
+    }
+    async selectDropDownByValue(locator:string,value:string):Promise<void> {
+        await this.waitForElementAttached(locator);
+        await this.page.selectOption(locator,{ value: value })
+    }
+
+
+    async getTextFromWebElements(locator: string): Promise<string[]> {
+        await this.waitForElementAttached(locator);
+        return this.page.$$eval(locator, elements => elements.map(item => item.textContent.trim()));
+    }
 
 
 
+
+    async verifyElementAttribute(locator: string, attribute: string, value: string): Promise<void> {
+        await this.waitForElementAttached(locator);
+        const textValue = await this.page.getAttribute(locator, attribute);
+        expect(textValue.trim()).toBe(value);
+    }
 
     async verifyElementText(locator: string, text: string): Promise<void> {
         await this.waitForElementAttached(locator);

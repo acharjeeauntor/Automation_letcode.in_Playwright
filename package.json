@@ -7,7 +7,7 @@
     "test": "npx playwright test",
     "headed": "npx playwright test --headed --reporter=list",
     "debug": "npx playwright test --debug",
-    "test:single": "npx playwright test Button.test.ts --project=Chrome",
+    "test:single": "npx playwright test Elements.test.ts --project=Chrome",
     "test:parallel": "npx playwright test --grep @Smoke --project=Chrome",
     "test:serial": "npx playwright test --grep @Smoke --workers=1 --project=Chrome",
     "test:api": "npx playwright test --grep @API --workers=1 --project=API",
