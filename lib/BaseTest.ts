@@ -6,6 +6,10 @@ import { FramePage } from "../pageFactory/pageRepository/FramePage"
 import { AlertPage } from "../pageFactory/pageRepository/AlertPage"
 import { WindowsPage } from "../pageFactory/pageRepository/WindowsPage"
 import { ElementsPage } from "../pageFactory/pageRepository/ElementsPage"
+import { WaitPage } from "../pageFactory/pageRepository/WaitPage"
+import { ShadowDomPage } from "../pageFactory/pageRepository/ShadowDomPage"
+import { RadioAndCheckboxPage } from "../pageFactory/pageRepository/RadioAndCheckboxPage"
+import { FormPage } from "../pageFactory/pageRepository/FormPage"
 
 
 const test = baseTest.extend<{
@@ -16,6 +20,10 @@ const test = baseTest.extend<{
     alertPage:AlertPage
     windowsPage:WindowsPage
     elementsPage:ElementsPage
+    waitPage:WaitPage
+    shadowDomPage:ShadowDomPage
+    radioAndCheckboxPage:RadioAndCheckboxPage
+    formPage:FormPage
 
 }>({
     buttonPage: async ({ page }, use) => {
@@ -38,6 +46,18 @@ const test = baseTest.extend<{
     },
     elementsPage:async({page},use)=>{
         await use(new ElementsPage(page))
+    },
+    waitPage:async({page},use)=>{
+        await use(new WaitPage(page))
+    },
+    shadowDomPage:async({page},use)=>{
+        await use(new ShadowDomPage(page))
+    },
+    radioAndCheckboxPage:async({page},use)=>{
+        await use(new RadioAndCheckboxPage(page))
+    },
+    formPage:async({page},use)=>{
+        await use(new FormPage(page))
     }
 })
 
