@@ -1,5 +1,5 @@
 export const testConfig = {
-    url: `https://letcode.in`,
+    weburl: `https://letcode.in`,
     api: `https://reqres.in`,
     username: `demouat@gmail.com`,
     password: `U2FsdGVkX1+6691EJeW/QG2vpjUvj47EQBrTIN5BqZg=`,

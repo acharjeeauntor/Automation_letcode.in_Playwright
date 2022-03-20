@@ -88,7 +88,11 @@ export class WebActions {
         await this.waitForElementAttached(locator);
         await this.page.selectOption(locator,{ value: value })
     }
-
+    async dragAndDrop(dragElementLocator: string, dropElementLocator: string): Promise<void> {
+        await this.waitForElementAttached(dragElementLocator);
+        await this.waitForElementAttached(dropElementLocator);
+        await this.page.dragAndDrop(dragElementLocator, dropElementLocator);
+    }
 
     async getTextFromWebElements(locator: string): Promise<string[]> {
         await this.waitForElementAttached(locator);

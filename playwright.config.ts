@@ -1,6 +1,12 @@
 // @ts-check
 import { devices, PlaywrightTestConfig } from '@playwright/test'
 import { testConfig } from './testConfig';
+const ENV = process.env.ENV
+
+if (!ENV || ![`weburl`,`api`].includes(ENV)) {
+  console.log(`Please provide a correct environment value like "npx cross-env ENV=weburl|api"`);
+  process.exit();
+}
 
 const config: PlaywrightTestConfig = {
 
@@ -42,7 +48,7 @@ const config: PlaywrightTestConfig = {
         //Chrome Browser Config
         channel: `chrome`,
         //Picks Base Url based on User input
-        baseURL: testConfig.url,
+        baseURL: testConfig[process.env.ENV],
         //Browser Mode
         headless: !true,
         //Browser height and width
@@ -65,7 +71,7 @@ const config: PlaywrightTestConfig = {
       name: `Firefox`,
       use: {
         browserName: `firefox`,
-        baseURL: testConfig.url,
+        baseURL: testConfig[process.env.ENV],
         headless: true,
         viewport: { width: 1500, height: 730 },
         ignoreHTTPSErrors: true,
@@ -84,7 +90,7 @@ const config: PlaywrightTestConfig = {
       use: {
         browserName: `chromium`,
         channel: `msedge`,
-        baseURL: testConfig.url,
+        baseURL: testConfig[process.env.ENV],
         headless: false,
         viewport: { width: 1500, height: 730 },
         ignoreHTTPSErrors: true,
@@ -101,7 +107,7 @@ const config: PlaywrightTestConfig = {
       name: `WebKit`,
       use: {
         browserName: `webkit`,
-        baseURL: testConfig.url,
+        baseURL: testConfig[process.env.ENV],
         headless: true,
         viewport: { width: 1500, height: 730 },
         ignoreHTTPSErrors: true,
@@ -119,7 +125,7 @@ const config: PlaywrightTestConfig = {
       use: {
         ...devices[`Pixel 4a (5G)`],
         browserName: `chromium`,
-        baseURL: testConfig.url,
+        baseURL: testConfig[process.env.ENV],
         headless: true,
         ignoreHTTPSErrors: true,
         acceptDownloads: true,
@@ -137,7 +143,7 @@ const config: PlaywrightTestConfig = {
     {
       name: `API`,
       use: {
-        baseURL: testConfig.api
+        baseURL:testConfig[process.env.ENV]
       }
     }
   ],

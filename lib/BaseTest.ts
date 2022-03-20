@@ -10,6 +10,8 @@ import { WaitPage } from "../pageFactory/pageRepository/WaitPage"
 import { ShadowDomPage } from "../pageFactory/pageRepository/ShadowDomPage"
 import { RadioAndCheckboxPage } from "../pageFactory/pageRepository/RadioAndCheckboxPage"
 import { FormPage } from "../pageFactory/pageRepository/FormPage"
+import { DragAndDropPage } from "../pageFactory/pageRepository/DragAndDropPage"
+import { MultiSelectPage } from "../pageFactory/pageRepository/MultiSelectPage"
 
 
 const test = baseTest.extend<{
@@ -24,6 +26,9 @@ const test = baseTest.extend<{
     shadowDomPage:ShadowDomPage
     radioAndCheckboxPage:RadioAndCheckboxPage
     formPage:FormPage
+    dragAndDropPage:DragAndDropPage
+    multiSelectPage:MultiSelectPage
+
 
 }>({
     buttonPage: async ({ page }, use) => {
@@ -58,6 +63,12 @@ const test = baseTest.extend<{
     },
     formPage:async({page},use)=>{
         await use(new FormPage(page))
+    },
+    dragAndDropPage:async({page},use)=>{
+        await use(new DragAndDropPage(page))
+    },
+    multiSelectPage:async({page},use)=>{
+        await use(new MultiSelectPage(page))
     }
 })
 
