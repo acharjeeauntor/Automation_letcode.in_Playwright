@@ -3,7 +3,7 @@ import {expect} from "@playwright/test"
 
 test.describe(`Test Drag and Drop`, async () => {
     test.beforeEach(async ({ dragAndDropPage }) => {
-        await dragAndDropPage.navigateToUrl("/dropable")
+        await dragAndDropPage.navigateToUrl()
     })
     test(`Drag the source box with in the target box and Verify by Traget Box text`, async ({ dragAndDropPage }) => {
         await dragAndDropPage.dragAndDropBox()

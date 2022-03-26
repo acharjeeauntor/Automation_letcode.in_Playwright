@@ -4,7 +4,7 @@ import ButtonData from "@data/buttonData.json"
 
 test.describe(`Test Button`, async () => {
     test.beforeEach(async({ buttonPage })=>{
-        await buttonPage.navigateToUrl("/buttons")
+        await buttonPage.navigateToUrl()
     })
     test(`Goto Home and come back here using driver command`, async ({ buttonPage }) => {
         // await test.step(`Goto Button page`, async () => {
@@ -29,7 +29,7 @@ test.describe(`Test Button`, async () => {
             expect(colorCode).toEqual(ButtonData.buttonColorCode)
         })
     })
-    test.only(`Confirm button is disabled`, async ({ buttonPage }) => {
+    test(`Confirm button is disabled`, async ({ buttonPage }) => {
         // await test.step(`Goto Button page`, async () => {
         //     await buttonPage.navigateToUrl("/buttons")
         // })

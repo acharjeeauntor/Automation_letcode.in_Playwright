@@ -11,8 +11,8 @@ export class ShadowDomPage {
         webActions = new WebActions(this.page)
         shadowDomPageObjects = new ShadowDomPageObjects()
     }
-    async navigateToUrl(url: string): Promise<void> {
-        await webActions.navigateToURL(url)
+    async navigateToUrl(): Promise<void> {
+        await webActions.navigateToURL("/shadow")
     }
 
     async enterFirstName(name: string): Promise<void> {

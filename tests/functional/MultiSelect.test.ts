@@ -2,7 +2,7 @@ import test from "@lib/BaseTest"
 
 test.describe(`Test Sort`, async () => {
     test.beforeEach(async ({ multiSelectPage }) => {
-        await multiSelectPage.navigateToUrl("/selectable")
+        await multiSelectPage.navigateToUrl()
     })
     test(`Move the content from to do to done`,async({multiSelectPage})=>{
         await multiSelectPage.selectItem()

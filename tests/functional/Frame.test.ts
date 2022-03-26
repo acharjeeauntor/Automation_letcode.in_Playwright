@@ -4,7 +4,7 @@ import FrameData from "@data/frameData.json"
 
 test.describe(`Test Frame`, async () => {
     test.beforeEach(async ({ framePage }) => {
-        await framePage.navigateToUrl("/frame")
+        await framePage.navigateToUrl()
     })
 
     test(`Enter your Name`, async ({ framePage }) => {

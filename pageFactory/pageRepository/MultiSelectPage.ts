@@ -12,8 +12,8 @@ export class MultiSelectPage {
         webActions = new WebActions(this.page)
         multiSelectPageObjects = new MultiSelectPageObjects()
     }
-    async navigateToUrl(url: string): Promise<void> {
-        await webActions.navigateToURL(url)
+    async navigateToUrl(): Promise<void> {
+        await webActions.navigateToURL("/selectable")
     }
 
     async selectItem(): Promise<void> {

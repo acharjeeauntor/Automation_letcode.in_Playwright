@@ -13,8 +13,8 @@ export class AlertPage {
         alertPageObjects = new AlertPageObjects()
     }
 
-    async navigateToUrl(url: string): Promise<void> {
-        await webActions.navigateToURL(url)
+    async navigateToUrl(): Promise<void> {
+        await webActions.navigateToURL("/alert")
     }
 
     async getSimpleAlertMsg(): Promise<string> {

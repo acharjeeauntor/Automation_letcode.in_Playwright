@@ -3,8 +3,8 @@ import { devices, PlaywrightTestConfig } from '@playwright/test'
 import { testConfig } from './testConfig';
 const ENV = process.env.ENV
 
-if (!ENV || ![`weburl`,`api`].includes(ENV)) {
-  console.log(`Please provide a correct environment value like "npx cross-env ENV=weburl|api"`);
+if (!ENV || ![`functional`,`api`].includes(ENV)) {
+  console.log(`Please provide a correct environment value like "npx cross-env ENV=functional|api"`);
   process.exit();
 }
 
@@ -34,8 +34,8 @@ const config: PlaywrightTestConfig = {
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
 
-  reporter: [[`./CustomReporterConfig.ts`], ['list'], [`allure-playwright`], [`html`, { outputFolder: 'html-report', open: 'never' }]],
-
+  // reporter: [[`./CustomReporterConfig.ts`], ['list'], [`allure-playwright`], [`html`, { outputFolder: 'html-report', open: 'never' }]],
+  reporter: [['list'], [`allure-playwright`], [`html`, { outputFolder: 'html-report', open: 'never' }]],
 
   /* Configure projects for major browsers */
   projects: [
@@ -49,9 +49,9 @@ const config: PlaywrightTestConfig = {
         //Picks Base Url based on User input
         baseURL: testConfig[process.env.ENV],
         //Browser Mode
-        headless: !true,
+        headless: true,
         //Browser height and width
-        viewport: { width: 1500, height: 730 },
+        viewport: { width: 1600, height: 900 },
         ignoreHTTPSErrors: true,
         //Enable File Downloads in Chrome
         acceptDownloads: true,
@@ -71,7 +71,7 @@ const config: PlaywrightTestConfig = {
       use: {
         browserName: `firefox`,
         baseURL: testConfig[process.env.ENV],
-        headless: true,
+        headless: !true,
         viewport: { width: 1500, height: 730 },
         ignoreHTTPSErrors: true,
         acceptDownloads: true,

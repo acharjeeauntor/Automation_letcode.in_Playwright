@@ -3,7 +3,7 @@ import { expect } from "@playwright/test"
 
 test.describe(`Test Windows`, async () => {
     test.beforeEach(async ({ windowsPage }) => {
-        await windowsPage.navigateToUrl("/windows")
+        await windowsPage.navigateToUrl()
     })
     test(`Goto Home`, async ({ windowsPage,context}) => {
        

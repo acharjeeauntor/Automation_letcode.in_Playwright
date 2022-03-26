@@ -13,8 +13,8 @@ export class FramePage {
         framePageObjects = new FramePageObjects()
     }
 
-    async navigateToUrl(url: string): Promise<void> {
-        await webActions.navigateToURL(url)
+    async navigateToUrl(): Promise<void> {
+        await webActions.navigateToURL("/frame")
     }
 
 

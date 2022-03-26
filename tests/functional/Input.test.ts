@@ -3,7 +3,7 @@ import InputData from "@data/inputData.json"
 
 test.describe(`Test Input`, async () => {
     test.beforeEach(async ({ inputPage }) => {
-        await inputPage.navigateToUrl("/edit")
+        await inputPage.navigateToUrl()
     })
 
     test(`Enter your full Name`, async ({ inputPage }) => {

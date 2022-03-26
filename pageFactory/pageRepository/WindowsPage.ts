@@ -12,8 +12,8 @@ export class WindowsPage {
         windowsPageObjects = new WindowsPageObjects()
     }
 
-    async navigateToUrl(url: string): Promise<void> {
-        await webActions.navigateToURL(url)
+    async navigateToUrl(): Promise<void> {
+        await webActions.navigateToURL("/windows")
     }
     async clickOpenHomePageBtn() {
         await webActions.clickElement(windowsPageObjects.Open_Home_Page_Btn_ID)

@@ -1,5 +1,5 @@
 export const testConfig = {
-    weburl: `https://letcode.in`,
+    functional: `https://letcode.in`,
     api: `https://reqres.in`,
     waitForElement: 120000,
     dbUsername: ``,

@@ -4,7 +4,7 @@ import FormData from "@data/formData.json"
 
 test.describe(`Test Form`,async()=>{
     test.beforeEach(async ({ formPage }) => {
-        await formPage.navigateToUrl("/forms")
+        await formPage.navigateToUrl()
     })
     test(`Submit Form`,async({ formPage })=>{
         await formPage.submitForm(FormData.FirstName,FormData.LastName,FormData.email,

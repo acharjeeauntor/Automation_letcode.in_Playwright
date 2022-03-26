@@ -13,8 +13,8 @@ export class FormPage {
         formPageObjects = new FormPageObjects()
     }
 
-    async navigateToUrl(url: string): Promise<void> {
-        await webActions.navigateToURL(url)
+    async navigateToUrl(): Promise<void> {
+        await webActions.navigateToURL("/forms")
     }
 
     async submitForm(fname: string, lname: string,

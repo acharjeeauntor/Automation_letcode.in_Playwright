@@ -4,7 +4,7 @@ import DropDownData from "@data/dropdownData.json"
 
 test.describe(`Test Dropdown`, async () => {
     test.beforeEach(async ({ dropdownPage }) => {
-        await dropdownPage.navigateToUrl("/dropdowns")
+        await dropdownPage.navigateToUrl()
     })
 
     test(`Select the apple using visible text`, async ({ dropdownPage }) => {

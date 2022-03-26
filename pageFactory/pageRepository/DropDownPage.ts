@@ -12,8 +12,8 @@ export class DropDownPage {
         dropDownPageObjects = new DropDownPageObjects()
     }
 
-    async navigateToUrl(url: string): Promise<void> {
-        await webActions.navigateToURL(url)
+    async navigateToUrl(): Promise<void> {
+        await webActions.navigateToURL("/dropdowns")
     }
 
     async selectApple(fruit: string): Promise<void> {

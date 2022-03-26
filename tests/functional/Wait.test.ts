@@ -4,7 +4,7 @@ import WaitData from "@data/waitData.json"
 
 test.describe(`Test Wait`, async () => {
     test.beforeEach(async ({ waitPage }) => {
-        await waitPage.navigateToUrl("/waits")
+        await waitPage.navigateToUrl()
     })
     test(`Accept the Alert`, async ({ waitPage }) => {
         let msg = await waitPage.getSimpleBtnAlertMsg()

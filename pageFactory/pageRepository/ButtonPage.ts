@@ -13,8 +13,8 @@ export class ButtonPage {
         buttonPageObjects = new ButtonPageObjects()
     }
 
-    async navigateToUrl(url: string): Promise<void> {
-        await webActions.navigateToURL(url)
+    async navigateToUrl(): Promise<void> {
+        await webActions.navigateToURL("/buttons")
     }
 
     async clickGoToHomeBtn(): Promise<void> {

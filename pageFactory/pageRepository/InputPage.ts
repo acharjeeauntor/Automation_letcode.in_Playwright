@@ -12,8 +12,8 @@ export class InputPage {
         webActions = new WebActions(this.page)
         inputPageObjects = new InputPageObjects()
     }
-    async navigateToUrl(url: string): Promise<void> {
-        await webActions.navigateToURL(url)
+    async navigateToUrl(): Promise<void> {
+        await webActions.navigateToURL("/edit")
     }
     async enterFullName(name: string):Promise<void> {
         await webActions.enterElementText(inputPageObjects.Full_Name_Input_ID, name)

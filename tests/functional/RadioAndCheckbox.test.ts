@@ -3,7 +3,7 @@ import { expect } from "@playwright/test"
 
 test.describe(`Test Radio and Checkbox`, async () => {
     test.beforeEach(async ({ radioAndCheckboxPage }) => {
-        await radioAndCheckboxPage.navigateToUrl("/radio")
+        await radioAndCheckboxPage.navigateToUrl()
     })
     test(`Test Radio buttons`, async ({ radioAndCheckboxPage }) => {
         await radioAndCheckboxPage.checkYesInSelectAnyOne()

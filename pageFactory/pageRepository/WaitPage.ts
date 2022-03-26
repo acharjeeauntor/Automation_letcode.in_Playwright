@@ -12,8 +12,8 @@ export class WaitPage {
         webActions = new WebActions(this.page)
         waitPageObjects = new WaitPageObjects()
     }
-    async navigateToUrl(url: string): Promise<void> {
-        await webActions.navigateToURL(url)
+    async navigateToUrl(): Promise<void> {
+        await webActions.navigateToURL("/waits")
     }
 
     async getSimpleBtnAlertMsg(): Promise<string> {

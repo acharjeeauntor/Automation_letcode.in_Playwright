@@ -13,8 +13,8 @@ export class DragAndDropPage {
         dragAndDropPageObjects = new DragAndDropPageObjects()
     }
 
-    async navigateToUrl(url: string): Promise<void> {
-        await webActions.navigateToURL(url)
+    async navigateToUrl(): Promise<void> {
+        await webActions.navigateToURL("/dropable")
     }
 
     async dragAndDropBox(): Promise<void> {

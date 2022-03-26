@@ -3,7 +3,7 @@ import ShadowDomData from "@data/shadowDomData.json"
 
 test.describe(`Test Shadow DOM`, async () => {
     test.beforeEach(async ({ shadowDomPage }) => {
-        await shadowDomPage.navigateToUrl("/shadow")
+        await shadowDomPage.navigateToUrl()
     })
 
     

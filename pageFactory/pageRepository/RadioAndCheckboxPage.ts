@@ -12,8 +12,8 @@ export class RadioAndCheckboxPage {
         webActions = new WebActions(this.page)
         radioAndCheckboxPageObjects = new RadioAndCheckboxPageObjects()
     }
-    async navigateToUrl(url: string): Promise<void> {
-        await webActions.navigateToURL(url)
+    async navigateToUrl(): Promise<void> {
+        await webActions.navigateToURL("/radio")
     }
 
     async checkYesInSelectAnyOne(){

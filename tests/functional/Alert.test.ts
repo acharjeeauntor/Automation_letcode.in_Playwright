@@ -4,7 +4,7 @@ import AlertData from "@data/alertData.json"
 
 test.describe(`Test Alert`, async () => {
     test.beforeEach(async ({ alertPage }) => {
-        await alertPage.navigateToUrl("/alert")
+        await alertPage.navigateToUrl()
     })
 
     test(`Accept the Alert`, async ({ alertPage }) => {
