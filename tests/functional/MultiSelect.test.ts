@@ -1,4 +1,4 @@
-import test from "../../lib/BaseTest"
+import test from "@lib/BaseTest"
 
 test.describe(`Test Sort`, async () => {
     test.beforeEach(async ({ multiSelectPage }) => {

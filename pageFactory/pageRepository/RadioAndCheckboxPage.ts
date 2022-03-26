@@ -1,6 +1,6 @@
 import { Page, PageScreenshotOptions } from "@playwright/test"
-import { WebActions } from "../../lib/WebActions"
-import { RadioAndCheckboxPageObjects } from "../objectRepository/RadioAndCheckboxPageObjects"
+import { WebActions } from "@lib/WebActions"
+import { RadioAndCheckboxPageObjects } from "@objects/RadioAndCheckboxPageObjects"
 
 let webActions: WebActions
 let radioAndCheckboxPageObjects: RadioAndCheckboxPageObjects

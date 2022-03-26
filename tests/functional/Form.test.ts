@@ -1,6 +1,6 @@
-import test from "../../lib/BaseTest"
+import test from "@lib/BaseTest"
 import {expect} from "@playwright/test"
-import FormData from "../../test-data/formData.json"
+import FormData from "@data/formData.json"
 
 test.describe(`Test Form`,async()=>{
     test.beforeEach(async ({ formPage }) => {

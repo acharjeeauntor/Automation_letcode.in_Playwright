@@ -1,6 +1,6 @@
 import { Page, expect } from "@playwright/test"
-import { WebActions } from "../../lib/WebActions"
-import { InputPageObjects } from "../objectRepository/InputPageObjects"
+import { WebActions } from "@lib/WebActions"
+import { InputPageObjects } from "@objects/InputPageObjects"
 
 let webActions: WebActions
 let inputPageObjects: InputPageObjects
@@ -20,7 +20,7 @@ export class InputPage {
     }
 
     async clearInputField():Promise<void> {
-        await webActions.clearInputField(inputPageObjects.Full_Name_Input_ID)
+        await webActions.clearInputField(inputPageObjects.Clear_Text_Input_ID)
     }
     async appendTextAndKeyboardTab(text:string):Promise<void> {
         try{

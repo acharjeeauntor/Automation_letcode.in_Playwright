@@ -1,6 +1,6 @@
 import { Page } from "@playwright/test"
-import { WebActions } from "../../lib/WebActions"
-import { WindowsPageObjects } from "../objectRepository/WindowsPageObjects"
+import { WebActions } from "@lib/WebActions"
+import { WindowsPageObjects } from "@objects/WindowsPageObjects"
 
 let webActions: WebActions
 let windowsPageObjects: WindowsPageObjects

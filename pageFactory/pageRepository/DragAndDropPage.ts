@@ -1,6 +1,6 @@
 import { Page } from "@playwright/test"
-import { WebActions } from "../../lib/WebActions"
-import { DragAndDropPageObjects } from "../objectRepository/DragAndDropPageObjects"
+import { WebActions } from "@lib/WebActions"
+import { DragAndDropPageObjects } from "@objects/DragAndDropPageObjects"
 
 let webActions: WebActions
 let dragAndDropPageObjects: DragAndDropPageObjects

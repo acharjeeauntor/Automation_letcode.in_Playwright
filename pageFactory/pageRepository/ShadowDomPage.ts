@@ -1,5 +1,5 @@
-import { WebActions } from "../../lib/WebActions";
-import { ShadowDomPageObjects } from "../objectRepository/ShadowDomPageObjects";
+import { WebActions } from "@lib/WebActions"
+import { ShadowDomPageObjects } from "@objects/ShadowDomPageObjects";
 import { Page } from "@playwright/test"
 
 let webActions: WebActions

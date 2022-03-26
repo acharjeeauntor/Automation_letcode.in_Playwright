@@ -1,6 +1,6 @@
 import { Page } from "@playwright/test"
-import { DropDownPageObjects } from "../objectRepository/DropDownPageObjects"
-import { WebActions } from "../../lib/WebActions"
+import { DropDownPageObjects } from "@objects/DropDownPageObjects"
+import { WebActions } from "@lib/WebActions"
 
 let webActions: WebActions
 let dropDownPageObjects: DropDownPageObjects

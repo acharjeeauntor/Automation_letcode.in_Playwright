@@ -1,6 +1,6 @@
 import { Page } from "@playwright/test"
-import { WebActions } from "../../lib/WebActions"
-import { AlertPageObjects } from "../objectRepository/AlertPageObjects"
+import { WebActions } from "@lib/WebActions"
+import { AlertPageObjects } from "@objects/AlertPageObjects"
 
 let webActions: WebActions
 let alertPageObjects: AlertPageObjects

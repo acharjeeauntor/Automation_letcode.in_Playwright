@@ -1,6 +1,6 @@
 import { Page, expect } from "@playwright/test"
-import { WebActions } from "../../lib/WebActions"
-import { ButtonPageObjects } from "../objectRepository/ButtonPageObjects"
+import { WebActions } from "@lib/WebActions"
+import { ButtonPageObjects } from "@objects/ButtonPageObjects"
 
 let webActions: WebActions
 let buttonPageObjects: ButtonPageObjects

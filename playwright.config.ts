@@ -20,7 +20,6 @@ const config: PlaywrightTestConfig = {
      */
     timeout: 20000
   },
-
   //Global Setup to run before all tests
   globalSetup: `./global-setup`,
 
@@ -63,7 +62,7 @@ const config: PlaywrightTestConfig = {
         //Slows down execution by ms
         launchOptions: {
           slowMo: 0
-        }
+        },
       },
     },
 

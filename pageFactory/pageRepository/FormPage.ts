@@ -1,6 +1,6 @@
 import { Page } from "@playwright/test"
-import { FormPageObjects } from "../objectRepository/FormPageObjects"
-import { WebActions } from "../../lib/WebActions"
+import { FormPageObjects } from "@objects/FormPageObjects"
+import { WebActions } from "@lib/WebActions"
 
 let webActions: WebActions
 let formPageObjects: FormPageObjects

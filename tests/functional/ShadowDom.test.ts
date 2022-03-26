@@ -1,6 +1,5 @@
-import { expect } from "@playwright/test"
-import test from "../../lib/BaseTest"
-import ShadowDomData from "../../test-data/shadowDomData.json"
+import test from "@lib/BaseTest"
+import ShadowDomData from "@data/shadowDomData.json"
 
 test.describe(`Test Shadow DOM`, async () => {
     test.beforeEach(async ({ shadowDomPage }) => {

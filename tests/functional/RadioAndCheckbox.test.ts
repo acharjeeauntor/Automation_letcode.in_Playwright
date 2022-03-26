@@ -1,4 +1,4 @@
-import test from "../../lib/BaseTest"
+import test from "@lib/BaseTest"
 import { expect } from "@playwright/test"
 
 test.describe(`Test Radio and Checkbox`, async () => {

@@ -1,6 +1,6 @@
-import test from "../../lib/BaseTest"
+import test from "@lib/BaseTest"
 import { expect } from "@playwright/test"
-import ElementData from "../../test-data/elementData.json"
+import ElementData from "@data/elementData.json"
 
 test.describe(`Test Elementes`, async () => {
     test.beforeEach(async ({ elementsPage }) => {
@@ -17,7 +17,10 @@ test.describe(`Test Elementes`, async () => {
             await elementsPage.getUserInfo()
         })
         await test.step(`Assert that no.of public repositories are listed correctly`, async () => {
-            expect(await elementsPage.getTotalRepos()).toBe(ElementData.totalrepo)
+            // Example of Soft assertion & Custom expect Message
+            expect.soft(await elementsPage.getTotalRepos(),"Custom expect Message: Total 30 Repo should be shown").toBe(ElementData.totalrepo)
+            console.log("Total 30 repo need to show")
+
         })
 
 

@@ -1,6 +1,6 @@
-import test from "../../lib/BaseTest"
+import test from "@lib/BaseTest"
 import { expect } from "@playwright/test"
-import AlertData from "../../test-data/alertData.json"
+import AlertData from "@data/alertData.json"
 
 test.describe(`Test Alert`, async () => {
     test.beforeEach(async ({ alertPage }) => {

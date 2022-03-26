@@ -1,6 +1,6 @@
 import { Page } from "@playwright/test"
-import { WebActions } from "../../lib/WebActions"
-import { MultiSelectPageObjects } from "../objectRepository/MultiSelectPageObjects"
+import { WebActions } from "@lib/WebActions"
+import { MultiSelectPageObjects } from "@objects/MultiSelectPageObjects"
 
 let webActions: WebActions
 let multiSelectPageObjects: MultiSelectPageObjects

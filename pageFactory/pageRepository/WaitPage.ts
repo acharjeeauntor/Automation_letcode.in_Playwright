@@ -1,6 +1,6 @@
 import { Page } from "@playwright/test"
-import { WebActions } from "../../lib/WebActions"
-import { WaitPageObjects } from "../objectRepository/WaitPageObjects"
+import { WebActions } from "@lib/WebActions"
+import { WaitPageObjects } from "@objects/WaitPageObjects"
 
 let webActions: WebActions
 let waitPageObjects: WaitPageObjects

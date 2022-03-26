@@ -1,6 +1,7 @@
-import test from "../../lib/BaseTest"
+import test from "@lib/BaseTest"
 import { expect } from "@playwright/test"
-import DropDownData from "../../test-data/dropdownData.json"
+import DropDownData from "@data/dropdownData.json"
+
 test.describe(`Test Dropdown`, async () => {
     test.beforeEach(async ({ dropdownPage }) => {
         await dropdownPage.navigateToUrl("/dropdowns")
