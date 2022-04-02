@@ -1,6 +1,6 @@
-export const testConfig = {
+export let testConfig = {
     functional: `https://letcode.in`,
-    api: `https://reqres.in`,
+    api: `https://simple-books-api.glitch.me`,
     waitForElement: 120000,
     dbUsername: ``,
     dbPassword: ``,
@@ -8,3 +8,4 @@ export const testConfig = {
     dbPort: ``,
     dbName: ``
 }
+

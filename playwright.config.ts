@@ -142,7 +142,10 @@ const config: PlaywrightTestConfig = {
     {
       name: `API`,
       use: {
-        baseURL:testConfig[process.env.ENV]
+        baseURL:testConfig[process.env.ENV],
+        extraHTTPHeaders:{
+          'Accept': 'application/json',
+        }
       }
     }
   ],
