@@ -6,7 +6,7 @@ test.describe(`Test Wait`, async () => {
     test.beforeEach(async ({ waitPage }) => {
         await waitPage.navigateToUrl()
     })
-    test(`Accept the Alert`, async ({ waitPage }) => {
+    test(`@Functional Accept the Alert`, async ({ waitPage }) => {
         let msg = await waitPage.getSimpleBtnAlertMsg()
         expect(msg).toBe(WaitData.alertMsg)
     })

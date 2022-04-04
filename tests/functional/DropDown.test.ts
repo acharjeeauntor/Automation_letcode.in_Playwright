@@ -7,21 +7,21 @@ test.describe(`Test Dropdown`, async () => {
         await dropdownPage.navigateToUrl()
     })
 
-    test(`Select the apple using visible text`, async ({ dropdownPage }) => {
+    test(`@Functional Select the apple using visible text`, async ({ dropdownPage }) => {
         await dropdownPage.selectApple(DropDownData.FruitName)
         await dropdownPage.verifyFruitSelection(DropDownData.FruitName)
     })
-    test(`Select your super hero's`, async ({ dropdownPage }) => {
+    test(`@Functional Select your super hero's`, async ({ dropdownPage }) => {
         await dropdownPage.selectSuperHero(DropDownData.HeroValue)
       await dropdownPage.verifyHeroSelection(DropDownData.superHero)
      
     })
-    test(`Select the last programming language and print all the options`, async ({ dropdownPage }) => {
+    test(`@Functional Select the last programming language and print all the options`, async ({ dropdownPage }) => {
         await dropdownPage.printAllLangOptions()
       await dropdownPage.verifyLanguageSelection(DropDownData.LastLanguage)
      
     })
-    test(`Select India using value & print the selected value`, async ({ dropdownPage }) => {
+    test(`@Functional Select India using value & print the selected value`, async ({ dropdownPage }) => {
      await dropdownPage.selectCountry(DropDownData.country)
      
     })

@@ -6,16 +6,16 @@ test.describe(`Test Input`, async () => {
         await inputPage.navigateToUrl()
     })
 
-    test(`Enter your full Name`, async ({ inputPage }) => {
+    test(`@Functional Enter your full Name`, async ({ inputPage }) => {
         await inputPage.enterFullName(InputData.fullName)
     })
-    test(`Append a text and press keyboard tab`, async ({ inputPage }) => {
+    test(`@Functional Append a text and press keyboard tab`, async ({ inputPage }) => {
         await inputPage.appendTextAndKeyboardTab(InputData.appendText)
     })
-    test(`What is inside the text box`, async ({ inputPage }) => {
+    test(`@Functional What is inside the text box`, async ({ inputPage }) => {
         await inputPage.verifyTextBoxValue(InputData.textBoxValue)
     })
-    test(`Clear the text`, async ({ inputPage }) => {
+    test(`@Functional Clear the text`, async ({ inputPage }) => {
         await inputPage.clearInputField()
     })
 

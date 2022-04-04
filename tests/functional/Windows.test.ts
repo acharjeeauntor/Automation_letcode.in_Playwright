@@ -5,7 +5,7 @@ test.describe(`Test Windows`, async () => {
     test.beforeEach(async ({ windowsPage }) => {
         await windowsPage.navigateToUrl()
     })
-    test(`Goto Home`, async ({ windowsPage,context}) => {
+    test(`@Functional Goto Home`, async ({ windowsPage,context}) => {
        
         const [newWindow] = await Promise.all([
             context.waitForEvent('page'),
@@ -18,7 +18,7 @@ test.describe(`Test Windows`, async () => {
         await newWindow.close()
 
     })
-    test(`Open muiltple windows`, async ({ windowsPage,context}) => {
+    test(`@Functional Open muiltple windows`, async ({ windowsPage,context}) => {
        
         const [multiWindow] = await Promise.all([
             context.waitForEvent('page'),

@@ -5,7 +5,7 @@ test.describe(`Test Radio and Checkbox`, async () => {
     test.beforeEach(async ({ radioAndCheckboxPage }) => {
         await radioAndCheckboxPage.navigateToUrl()
     })
-    test(`Test Radio buttons`, async ({ radioAndCheckboxPage }) => {
+    test(`@Functional Test Radio buttons`, async ({ radioAndCheckboxPage }) => {
         await radioAndCheckboxPage.checkYesInSelectAnyOne()
         await radioAndCheckboxPage.checkNoInSelectOnlyOne()
         await radioAndCheckboxPage.checkYesInFindBug()
@@ -13,7 +13,7 @@ test.describe(`Test Radio and Checkbox`, async () => {
         expect(await radioAndCheckboxPage.isMaybeIsDisabled()).toBeTruthy
 
     })
-    test(`Test Checkbox`, async ({ radioAndCheckboxPage }) => {
+    test(`@Functional Test Checkbox`, async ({ radioAndCheckboxPage }) => {
         expect(await radioAndCheckboxPage.isRememberMeIsChecked()).toBeTruthy
         await radioAndCheckboxPage.checkIAgreeToThe()
 

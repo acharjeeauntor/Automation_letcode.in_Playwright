@@ -6,7 +6,7 @@ test.describe(`Test Button`, async () => {
     test.beforeEach(async({ buttonPage })=>{
         await buttonPage.navigateToUrl()
     })
-    test(`Goto Home and come back here using driver command`, async ({ buttonPage }) => {
+    test(`@Functional Goto Home and come back here using driver command`, async ({ buttonPage }) => {
         // await test.step(`Goto Button page`, async () => {
         //     await buttonPage.navigateToUrl("/buttons")
         // })
@@ -20,7 +20,7 @@ test.describe(`Test Button`, async () => {
             await buttonPage.navigateBackFromHomePage()
         })
     })
-    test(`Find the color of the button`, async ({ buttonPage }) => {
+    test(`@Functional Find the color of the button`, async ({ buttonPage }) => {
         // await test.step(`Goto Button page`, async () => {
         //     await buttonPage.navigateToUrl("/buttons")
         // })
@@ -29,7 +29,7 @@ test.describe(`Test Button`, async () => {
             expect(colorCode).toEqual(ButtonData.buttonColorCode)
         })
     })
-    test(`Confirm button is disabled`, async ({ buttonPage }) => {
+    test(`@Functional Confirm button is disabled`, async ({ buttonPage }) => {
         // await test.step(`Goto Button page`, async () => {
         //     await buttonPage.navigateToUrl("/buttons")
         // })
@@ -39,7 +39,7 @@ test.describe(`Test Button`, async () => {
         })
     })
 
-    test(`Click and Hold Button`, async ({ buttonPage }) => {
+    test(`@Functional Click and Hold Button`, async ({ buttonPage }) => {
         // await test.step(`Goto Button page`, async () => {
         //     await buttonPage.navigateToUrl("/buttons")
         // })

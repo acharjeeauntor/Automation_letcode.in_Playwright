@@ -7,11 +7,11 @@ test.describe(`Test Frame`, async () => {
         await framePage.navigateToUrl()
     })
 
-    test(`Enter your Name`, async ({ framePage }) => {
+    test(`@Functional Enter your Name`, async ({ framePage }) => {
         await framePage.enterName(FrameData.firstName,FrameData.lastName)
     })
 
-    test(`Enter your Email`, async ({ framePage }) => {
+    test(`@Functional Enter your Email`, async ({ framePage }) => {
         await framePage.enterEmail(FrameData.email)
     })
 

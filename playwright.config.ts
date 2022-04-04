@@ -10,8 +10,8 @@ if (!ENV || ![`functional`,`api`].includes(ENV)) {
 
 const config: PlaywrightTestConfig = {
 
-  testDir: './tests',
-  testMatch: "*.test.ts",
+  // testDir: './tests',
+  // testMatch:['*.test.ts','*.api.ts'],
   expect: {
 
     /**
@@ -41,6 +41,7 @@ const config: PlaywrightTestConfig = {
   projects: [
     {
       name: `Chrome`,
+      //testDir:'./tests/functional',
       use: {
         // Configure the browser to use.
         browserName: `chromium`,
@@ -49,7 +50,7 @@ const config: PlaywrightTestConfig = {
         //Picks Base Url based on User input
         baseURL: testConfig[process.env.ENV],
         //Browser Mode
-        headless: true,
+        headless: !true,
         //Browser height and width
         viewport: { width: 1600, height: 900 },
         ignoreHTTPSErrors: true,
@@ -141,6 +142,7 @@ const config: PlaywrightTestConfig = {
     },
     {
       name: `API`,
+      //testDir:'./tests/api',
       use: {
         baseURL:testConfig[process.env.ENV],
         extraHTTPHeaders:{

@@ -6,7 +6,7 @@ test.describe(`Test Form`,async()=>{
     test.beforeEach(async ({ formPage }) => {
         await formPage.navigateToUrl()
     })
-    test(`Submit Form`,async({ formPage })=>{
+    test(`@Functional Submit Form`,async({ formPage })=>{
         await formPage.submitForm(FormData.FirstName,FormData.LastName,FormData.email,
             FormData.phone,FormData.adds1,FormData.adds2,
             FormData.state,FormData.postalcode,FormData.countryCode,

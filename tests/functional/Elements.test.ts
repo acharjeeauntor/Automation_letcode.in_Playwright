@@ -6,7 +6,7 @@ test.describe(`Test Elementes`, async () => {
     test.beforeEach(async ({ elementsPage }) => {
         await elementsPage.navigateToUrl()
     })
-    test(`Find Git repos & user information`, async ({ elementsPage }) => {
+    test(`@Functional Find Git repos & user information`, async ({ elementsPage }) => {
         await test.step(`Type and Enter your Git username`, async () => {
             await elementsPage.enterGitUsername(ElementData.username)
         })
