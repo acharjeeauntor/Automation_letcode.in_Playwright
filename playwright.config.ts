@@ -42,6 +42,7 @@ const config: PlaywrightTestConfig = {
     {
       name: `Chrome`,
       //testDir:'./tests/functional',
+      grepInvert:/@API/,
       use: {
         // Configure the browser to use.
         browserName: `chromium`,
@@ -66,7 +67,42 @@ const config: PlaywrightTestConfig = {
         },
       },
     },
-
+    {
+      name:"Smoke",
+      grep:/@Smoke/,
+      use: {
+        browserName: `firefox`,
+        baseURL: testConfig[process.env.ENV],
+        headless: !true,
+        viewport: { width: 1500, height: 730 },
+        ignoreHTTPSErrors: true,
+        acceptDownloads: true,
+        screenshot: `only-on-failure`,
+        video: `retain-on-failure`,
+        trace: `retain-on-failure`,
+        launchOptions: {
+          slowMo: 0
+        }
+      }
+    },
+    {
+      name:"Functional",
+      grep:/@Functional/,
+      use: {
+        browserName: `firefox`,
+        baseURL: testConfig[process.env.ENV],
+        headless: !true,
+        viewport: { width: 1500, height: 730 },
+        ignoreHTTPSErrors: true,
+        acceptDownloads: true,
+        screenshot: `only-on-failure`,
+        video: `retain-on-failure`,
+        trace: `retain-on-failure`,
+        launchOptions: {
+          slowMo: 0
+        }
+      }
+    },
     {
       name: `Firefox`,
       use: {
@@ -143,6 +179,7 @@ const config: PlaywrightTestConfig = {
     {
       name: `API`,
       //testDir:'./tests/api',
+      grep:/@API/,
       use: {
         baseURL:testConfig[process.env.ENV],
         extraHTTPHeaders:{

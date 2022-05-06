@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test --project=Chrome --workers=1",
+    "test:smoke": "npx playwright test --project=Smoke",
     "headed": "npx playwright test --headed --reporter=list",
     "debug": "npx playwright test --debug",
     "test:single": "npx playwright test MultiSelect.test.ts --project=Firefox",
     "test:parallel": "npx playwright test --grep @Smoke --project=Chrome",
     "test:serial": "npx playwright test --grep @Smoke --workers=1 --project=Chrome",
-    "test:functional":"npx playwright test --grep @Functional --project=Chrome --workers=4",
-    "test:api": "npx playwright test --grep @API --workers=1 --project=API",
+    "test:functional":"npx playwright test --project=Functional --workers=4",
+    "test:api": "npx playwright test --project=API",
     "test:db": "npx playwright test DB.test.ts --project=DB",
     "test:record": "npx playwright codegen",
     "test:visual": "npx playwright test --grep @Visual --project=Chrome",
@@ -27,7 +28,7 @@
   "author": "Auntor Acharja",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.20.0"
+    "@playwright/test": "^1.21.0"
   },
   "dependencies": {
     "@types/adm-zip": "^0.4.34",

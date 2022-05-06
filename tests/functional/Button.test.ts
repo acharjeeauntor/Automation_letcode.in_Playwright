@@ -6,7 +6,7 @@ test.describe(`Test Button`, async () => {
     test.beforeEach(async({ buttonPage })=>{
         await buttonPage.navigateToUrl()
     })
-    test(`@Functional Goto Home and come back here using driver command`, async ({ buttonPage }) => {
+    test(`@Smoke Goto Home and come back here using driver command`, async ({ buttonPage }) => {
         // await test.step(`Goto Button page`, async () => {
         //     await buttonPage.navigateToUrl("/buttons")
         // })
