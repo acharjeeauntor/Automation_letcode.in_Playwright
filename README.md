@@ -1,4 +1,4 @@
-# Playwright_letcode.in_Automation
+# Playwright_letcode.in_Automation_UsingTS
 Automation https://letcode.in/ using playwright,POM pattern
 -----------------------------------------------------------
 ## Technology: <br>
